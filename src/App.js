@@ -65,7 +65,7 @@ function App() {
           bottom: '20px',
           display: 'flex',
         }}>
-            <button style={{height: '40px', width: '40px', borderRadius: '50%', zIndex: 5}} onClick={() => addHeart()} >
+            <button className={s.apple} style={{height: '40px', width: '40px', borderRadius: '50%', zIndex: 5}} onClick={() => addHeart()} >
               fa
             </button>
             <div
@@ -86,7 +86,7 @@ function App() {
 
         </div>
         <div style={{marginLeft: '100px', position: 'absolute', bottom: 50}}>
-          <button style={{width: '40px', height: '40px', borderRadius: '50%', zIndex: 5}} onClick={() => addCoin()} >
+          <button className={s.apple} style={{width: '40px', height: '40px', borderRadius: '50%', zIndex: 5}} onClick={() => addCoin()} >
             Click
           </button>
           {!!coins.length &&

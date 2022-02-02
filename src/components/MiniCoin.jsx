@@ -13,7 +13,6 @@ const MiniCoin = ({removeCoin, coin}) => {
 
   return (
     <motion.svg
-
       style={{
         position: 'absolute',
         right: coin.right,
