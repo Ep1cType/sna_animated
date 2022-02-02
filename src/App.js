@@ -4,7 +4,7 @@ import plug from "./plug.svg";
 import {motion, AnimatePresence, useMotionValue, useTransform, useCycle, useAnimation} from "framer-motion";
 import s from "./App.module.scss";
 import {animated, useSpring} from "react-spring";
-import {useEffect, useLayoutEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import rect from "./rect.svg";
 import qqq from "./qqq.svg";
 import Convert from "./components/Convert/Convert";
@@ -28,12 +28,8 @@ function App() {
 
   const rot = {
     rotate: [20, -20, 20, -20, 0],
-    x: -75
+    x: -150
   };
-
-  useLayoutEffect(() => {
-      rot.x = -(postWidth.current.clientWidth / 2)
-  }, [])
 
   useEffect(() => {
 
@@ -55,7 +51,7 @@ function App() {
         <div ref={postWidth} style={{
           border: "2px solid black",
           height: "300px",
-          minWidth: "100%",
+          width: "100%",
           overflow: "hidden",
         }}>
           <div style={{width: "100%", height: "100%", position: "relative", display: 'flex', alignItems: 'center', justifyContent: 'flex-end'}}>
@@ -66,12 +62,11 @@ function App() {
               animate={controls}
               style={{
                 padding: 0,
-                borderRadius: '50%',
                 border: "none",
                 font: "inherit",
                 color: "inherit",
                 backgroundColor: "transparent",
-                right: "-60px",
+                right: "-62px",
                 position: 'absolute',
                 scale,
                 x,
