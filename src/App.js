@@ -54,7 +54,7 @@ function App() {
           width: "100%",
           overflow: "hidden",
         }}>
-          <div style={{width: "100%", height: "100%", position: "relative", display: 'flex', alignItems: 'center', justifyContent: 'flex-end'}}>
+          <motion.div style={{width: "100%", height: "100%", position: "relative", display: 'flex', alignItems: 'center', justifyContent: 'flex-end'}}>
             <motion.button
               initial={{
                 scale: 0.1
@@ -103,7 +103,7 @@ function App() {
                   fill="white"/>
               </motion.svg>
             </motion.button>
-          </div>
+          </motion.div>
         </div>
 
 
