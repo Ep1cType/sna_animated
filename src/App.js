@@ -4,7 +4,7 @@ import plug from "./plug.svg";
 import {motion, AnimatePresence, useMotionValue, useTransform, useCycle, useAnimation} from "framer-motion";
 import s from "./App.module.scss";
 import {animated, useSpring} from "react-spring";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useLayoutEffect, useRef, useState} from "react";
 import rect from "./rect.svg";
 import qqq from "./qqq.svg";
 import Convert from "./components/Convert/Convert";
@@ -31,6 +31,10 @@ function App() {
     x: -75
   };
 
+  useLayoutEffect(() => {
+      rot.x = -(postWidth.current.clientWidth / 2)
+  }, [])
+
   useEffect(() => {
 
     x.onChange(latest => {
@@ -40,8 +44,8 @@ function App() {
 
   return (
     <>
-      <button style={{position: "absolute", left: "1500px", top: "1000px"}} onClick={() => setIsOpen(!isOpen)}>Open
-      </button>
+      {/*<button style={{position: "absolute", left: "1500px", top: "1000px"}} onClick={() => setIsOpen(!isOpen)}>Open*/}
+      {/*</button>*/}
       <div className={s.App}>
 
 
@@ -51,7 +55,7 @@ function App() {
         <div ref={postWidth} style={{
           border: "2px solid black",
           height: "300px",
-          minWidth: "150px",
+          minWidth: "100%",
           overflow: "hidden",
         }}>
           <div style={{width: "100%", height: "100%", position: "relative", display: 'flex', alignItems: 'center', justifyContent: 'flex-end'}}>
@@ -67,7 +71,7 @@ function App() {
                 font: "inherit",
                 color: "inherit",
                 backgroundColor: "transparent",
-                right: "-62px",
+                right: "-60px",
                 position: 'absolute',
                 scale,
                 x,
