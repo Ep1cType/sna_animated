@@ -48,7 +48,7 @@ function App() {
         {/*<Animation />*/}
 
 
-        <div ref={postWidth} style={{
+        <motion.div ref={postWidth} style={{
           border: "2px solid black",
           height: "300px",
           width: "100%",
@@ -104,7 +104,7 @@ function App() {
               </motion.svg>
             </motion.button>
           </motion.div>
-        </div>
+        </motion.div>
 
 
         {/*{!isOpen && <Convert />}*/}
