@@ -66,7 +66,7 @@ function App() {
                 font: "inherit",
                 color: "inherit",
                 backgroundColor: "transparent",
-                right: "-62px",
+                right: "-58px",
                 position: 'absolute',
                 scale,
                 x,
