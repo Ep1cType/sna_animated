@@ -55,7 +55,8 @@ const Coin = () => {
             x,
           }}
           dragSnapToOrigin
-          drag={'x'}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
           dragElastic={1}
           dragTransition={{bounceStiffness: 500}}
           onDragEnd={() => {
