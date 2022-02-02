@@ -42,6 +42,7 @@ const Coin = () => {
           animate={controls}
           style={{
             padding: 0,
+            zIndex: 100,
             border: "none",
             font: "inherit",
             color: "inherit",
