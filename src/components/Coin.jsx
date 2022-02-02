@@ -49,7 +49,7 @@ const Coin = () => {
             font: "inherit",
             color: "inherit",
             backgroundColor: "transparent",
-            right: "-58px",
+            // right: "-58px",
             position: 'absolute',
             scale,
             x,
