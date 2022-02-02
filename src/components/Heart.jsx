@@ -5,10 +5,8 @@ const getRandomNumber = (min, max) => {
   return Math.random() * (max - min) + min
 }
 
+
 const Heart = ({heart, removeHeart}) => {
-
-
-  const controls = useAnimation();
 
   const animationEndY = Math.ceil(-600 * 0.7);
   const negativeEndY = animationEndY * -1;
@@ -16,20 +14,11 @@ const Heart = ({heart, removeHeart}) => {
 
   const heartPosition = useMotionValue(0);
 
-  const heartOpacity = useMotionValue(0)
 
-  const heartScale = useMotionValue(0);
-
-  const yAnimation = useTransform(heartPosition, [negativeEndY, 0], [animationEndY, 0]);
-
-
-  const opacity = useTransform(heartPosition, [0, animationEndY], [1, 0]);
+  const opacity = useTransform(heartPosition, [0, animationEndY/2, animationEndY], [1, 1, 0]);
   const scale = useTransform(heartPosition, [0, -15, -30], [0, 1.4, 1]);
   const xAnimation = useTransform(heartPosition, [0, animationEndY/6, animationEndY/3, animationEndY/2, -400], [0, 25, 15, 0, 10]);
   const rotate = useTransform(heartPosition, [0, animationEndY/6, animationEndY/3, animationEndY/2, -400], ['0deg', '-5deg', '0deg', '5deg', '0deg'])
-
-
-
 
   return (
     <motion.svg
@@ -41,12 +30,6 @@ const Heart = ({heart, removeHeart}) => {
         opacity,
         x: xAnimation,
         rotate
-        // y: yAnimation,
-        // opacity,
-        // scale
-        // opacity,
-        // scale
-        // y: yAnimation
       }}
       animate={{
         y: [0, animationEndY]
@@ -54,9 +37,6 @@ const Heart = ({heart, removeHeart}) => {
       transition={{
         duration: 2
       }}
-      // animate={controls}
-
-
       onAnimationComplete={() => removeHeart(heart.id)}
 
       width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
