@@ -7,6 +7,7 @@ const Coin = () => {
   const rotate = useMotionValue(0);
   const [animation, animate] = useCycle();
   console.log(x);
+  const buttonRef = useRef();
 
   const postWidth = useRef(null);
 
@@ -34,8 +35,9 @@ const Coin = () => {
       width: "100%",
       overflow: "hidden",
     }}>
-      <motion.div style={{width: "100%", height: "100%", position: "relative", display: 'flex', alignItems: 'center', justifyContent: 'flex-end'}}>
+      <div style={{width: "100%", height: "100%", position: "relative", display: 'flex', alignItems: 'center', justifyContent: 'flex-end'}}>
         <motion.button
+          ref={buttonRef}
           initial={{
             scale: 0.1
           }}
@@ -53,7 +55,7 @@ const Coin = () => {
             x,
           }}
           dragSnapToOrigin
-          drag={"x"}
+          drag={'x'}
           dragElastic={1}
           dragTransition={{bounceStiffness: 500}}
           onDragEnd={() => {
@@ -84,7 +86,7 @@ const Coin = () => {
               fill="white"/>
           </motion.svg>
         </motion.button>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
