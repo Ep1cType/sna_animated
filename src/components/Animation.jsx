@@ -34,7 +34,7 @@ const Animation = () => {
               className="path"
               fill="transparent"
               stroke="white"
-              d="M 0 0 L 40 0 L 47 -10 L 53 9 L 64 -7 L 66 0 L 84 0"
+              d="M 0 0 L 42 0 L 47 -10 L 53 9 L 64 -7 L 66 0 L 79 0"
             />
           </svg>
         </div>

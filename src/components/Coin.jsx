@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useLayoutEffect, useRef, useState} from "react";
 import {motion, useAnimation, useCycle, useMotionValue, useTransform} from "framer-motion";
 
 const Coin = () => {
@@ -7,6 +7,7 @@ const Coin = () => {
   const rotate = useMotionValue(0);
   const [animation, animate] = useCycle();
   console.log(x);
+  const [middle, setMiddle] = useState(null);
 
   const postWidth = useRef(null);
 
@@ -16,8 +17,13 @@ const Coin = () => {
 
   const rot = {
     rotate: [20, -20, 20, -20, 0],
-    x: -150
+    x: middle,
   };
+
+  useLayoutEffect(() => {
+    setMiddle(-(postWidth.current.clientWidth / 2))
+    console.log("Mid >>", -(postWidth.current.clientWidth / 2))
+  }, [])
 
   useEffect(() => {
 
