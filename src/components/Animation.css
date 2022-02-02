@@ -1,0 +1,103 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    /*background: linear-gradient(180deg, #ff008c 0%, rgb(211, 9, 225) 100%);*/
+    background-color: white;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.example-container {
+    position: relative;
+}
+
+
+.back {
+    position: absolute;
+    z-index: 2;
+    background-color: gray;
+    width: 150px;
+    height: 150px;
+}
+
+.heart {
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+}
+
+.pulse {
+    height: 21px;
+    z-index: 3;
+    position: absolute;
+    top: 32px;
+}
+
+.refresh {
+    padding: 10px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 10s linear forwards;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 2;
+    }
+}
+
+.anim {
+    width: 80px;
+    height: 80px;
+}
+
+.anim::after,
+.anim::before {
+    content: '';
+    position: absolute;
+    border: 5px solid #3D64FF;
+    left: -20px;
+    opacity: 0;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: anim 4s ease-in infinite;
+}
+
+.anim::after {
+    animation-delay: 0.7s;
+}
+
+@keyframes anim {
+    0% {
+        transform: scale(0.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+
+}

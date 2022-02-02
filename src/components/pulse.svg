@@ -1,3 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -11 81 21">
-  <path d="M 0 0 L 38 0 L 43 -8 L 46 10 L 48 10 L 59 -5 L 61 0 L 81 0 L 81 -2 L 62 -2 L 60 -8 L 58 -8 L 48 6 L 45 -11 L 42 -11 L 36 -2 L 0 -2 L 0 0" fill="#000000"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="21" width="81" viewBox="0 -11 81 21">
+  <path
+          class="path"
+          stroke="black"
+          fill="transparent"
+          d="m 0 0 l 40 0 l 7 -10 l 6 19 l 11 -16 l 2 7 l 18 0"
+  />
 </svg>

@@ -1,5 +1,5 @@
 .App {
-  background-color: grey;
+  //background-color: #FFFFFF;
   width: 100vw;
   min-height: 100vh;
 
@@ -73,6 +73,7 @@
   left: 0;
   height: 22px;
   width: 188px;
+  //border-radius: 11px;
 
   transform: rotate(25deg);
 
@@ -89,6 +90,7 @@
   height: 22px;
   width: 188px;
 
+  //border-radius: 11px;
 
 
   transform: rotate(-25deg);
@@ -194,3 +196,33 @@
 //    bottom: 63px;
 //  }
 //}
+
+.wave {
+  position: absolute;
+  z-index: 100;
+
+  top: 62px;
+  left: 144px;
+}
+
+
+.dragArea {
+  background: white;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 30px;
+}
+
+.box {
+  background: white;
+  border-radius: 30px;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  //top: calc(50% - 150px / 2);
+  //left: calc(50% - 150px / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
